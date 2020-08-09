@@ -95,5 +95,77 @@ console.log(" ý 1 :Khi so sánh 2 object vs nhau về cơ bản là chúng so s
 + "vì không tham chiếu trên cùng 1 ví trí trong bộ nhớ nên chúng không bằng nhau");
 console.log("ý 2: Khi so sánh 2 chuổi string mà là kỉ tự kiểu số chúng sẽ so sánh kí tự đầu tiên của chuổi đó => '1000' < '200' vì 1 < 2 => a > b là false ");
 console.log("-------------------------------------");
+//bt 11
+//11.a 
+var bt11A = [1, 2, 4, 8, 16];
+console.log("Bài tập 11.a" + "\n");
+for (const key of bt11A.reverse()) {
+    console.log(key);
+}
+console.log("-------------------------------------");
+//11.b
+var bt11B1 = [1, 2, 3, 4, 5];
+var bt11B2 = [10, 20, 30];
+console.log("Bài tập 11.b" + "\n");
+for (const keyBt11B1 of bt11B1) {
+    for (const keyBt11B2 of bt11B2) {
+        console.log(keyBt11B1 * keyBt11B2);
+    }
+}
+console.log("-------------------------------------");
+//11.c
+function calculate(start,end) {
+    var value = start;
+    for (start ;start < end -1;start++) {
+        console.log(value *= start+1);
+    }
 
+}
+console.log("Bài tập 11.c" + "\n");
+calculate(3,5);
+console.log("-------------------------------------");
 
+//12
+function multiply(arr) {
+    var value = 1;
+    for (const key of arr) {
+    console.log(value *= key);     
+    }
+}
+console.log("Bài tập 12a" + "\n");
+ multiply([4,3,4,5]);
+ var apartment = {
+    bedroom: {
+      area: 20,
+      bed: {
+        type: 'twin-bed',
+        price: 100
+      }
+    }
+  };
+  
+ console.log("Bài tập 12b" + "\n");
+ function showArray(value) {
+    for (const key in value) {
+         console.log(key);
+          if (typeof(value[key]) === "object") {
+             showArray(value[key])
+             
+          }
+    }
+ }
+ showArray(apartment);
+ console.log("-------------------------------------");
+ //bt13
+ console.log("Bài tập 13" + "\n");
+ function removeArr(arr,n) {
+    var value = arr.length - n;
+    console.log(value);
+    for (var i = 0 ;i <= value -1 ; i ++) {
+            arr.splice(-1,1);
+    }
+    console.log(arr);
+    
+}
+ removeArr([1,2,3,4,5],4)
+ console.log("-------------------------------------");
