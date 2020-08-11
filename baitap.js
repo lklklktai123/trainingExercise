@@ -169,3 +169,210 @@ console.log("Bài tập 12a" + "\n");
 }
  removeArr([1,2,3,4,5],4)
  console.log("-------------------------------------");
+ //bt14 callback function bi
+ function double(num) {
+     return num * 2 ;
+
+ }
+ function sumAndDo(arr,callback) {
+     var value = 0;
+     for (const key of arr) {
+         value = callback(key);
+         console.log(value); 
+     }
+     
+}
+console.log("Bài tập 14a" + "\n");
+sumAndDo([5,5,5],double);
+console.log("Bài tập 14a" + "\n");
+function transform(arr,callback) {
+    var result = [];
+    for (var i = 0;i < arr.length ; i++) {
+        result.push(callback(arr[i]));
+    }
+    return result
+
+}
+function duyetMang(num) {
+        return num * 2
+   
+}
+var output = transform([1,2,3,4,5],duyetMang);
+console.log(output);
+//bt 15
+console.log("Bài tập 15a" + "\n");
+function tripple(num) {
+    return num * 3 ;
+}
+var numbersBt15 = [10, 5, 8];
+var newNumbersBt15 = numbersBt15.map(function(value,index){
+    return value = tripple(value)
+});
+console.log(newNumbersBt15);
+// function sochan(start,end) {
+// for ( start ;start <= end; start++) {
+//     if (start % 2 == 0) {
+//         console.log(start);
+//     }
+// }
+// }
+// function sole(start,end) {
+//     for ( start ;start <= end; start++) {
+//         if (start % 2 > 0) {
+//             console.log(start);
+//         }
+    
+//     }
+//     }
+// function insoTheoDieuKien(callback) {
+//     for (var index = 1 ; index<= 100;index++) {
+//         const dk = callback(index);
+//         if (dk) {
+//             console.log(index)
+//         }
+//     }
+// }
+// insoTheoDieuKien(function(index) {
+// if (index % 2 == 0) {
+//     return true;
+// } else {
+//     return false
+// }
+// })
+// const  bb = [1,2,3,4];
+// const newbb = bb.map(function(value,index){
+//     return value *2;
+// })
+// console.log(newbb);
+var namesOnly = ([
+    {
+      name: "Angelina Jolie",
+      age: 80
+    },
+    {
+        name: "Eric Jones",
+        age: 2
+      },
+      {
+        name: "Paris Hilton",
+        age: 5
+      },
+      {
+        name: "Kayne West",
+        age: 16
+      },
+      {
+        name: "Bob Ziroll",
+        age: 100
+      }
+    ])
+    var newNamesOnly = namesOnly.map(function(value,index){
+        return value.name
+    })
+    console.log("Bài tập 15b" + "\n");
+    console.log(newNamesOnly);
+    console.log("-------------------------------------");
+    var arrayHeightWidth = ([
+        {
+          witdh: 4,
+          height : 6
+        },
+         {
+          witdh: 5,
+          height : 7
+        },
+        {
+          witdh: 1,
+          height : 3
+        },
+        {
+          witdh: 5,
+          height : 10
+        },
+        {
+          witdh: 10,
+          height : 10
+        }
+      ]) 
+      function renderAcreage(arr) {
+        var newArr = arr.map(function(value,index){
+            return value.witdh * value.height
+        })
+        return newArr;
+    }
+    console.log(renderAcreage(arrayHeightWidth))
+    console.log("-------------------------------------");
+    //bt 16
+    var arrBt = [1,21,3,41,5,61,7,81,91,101]
+    function fiveAndGreaterOnly(arr) {
+		var newArr = arr.filter(function (value,index){
+            return value > 5
+        })
+        return newArr
+    }
+    console.log("Bài tập 16a" + "\n");
+    console.log(fiveAndGreaterOnly(arrBt))
+    console.log("-------------------------------------");
+    function evensOnly(arr) {
+        var newArrBt = arrBt.filter(function (value,index) {
+            if (value % 2 == 0) {
+                return value;
+            }
+        })
+        return newArrBt
+    }
+    console.log("Bài tập 16b" + "\n");
+    console.log(evensOnly(arrBt));
+    console.log("-------------------------------------");
+    function findFirstEvenNumber(array) {
+		return array.find(element => element % 2 == 0);
+    }
+    console.log("Bài tập 16c" + "\n");
+    console.log(findFirstEvenNumber(arrBt));
+    console.log("-------------------------------------");
+    function findDivisibleNum(array, x) {
+        return array.find(element => element % x == 0);
+    }
+    console.log("Bài tập 16d" + "\n");
+    console.log(findDivisibleNum(arrBt,5));
+    console.log("-------------------------------------");
+
+    var categories = [
+        { id: 1, name: 'Đồ điện tử'},
+        { id: 2, name: 'Đồ gia dụng'},
+        { id: 3, name: 'Nội thất'}
+      ];
+    var listProducts = [
+        {id: 1, categoryId: 1, name: 'Tivi'},
+        {id: 2, categoryId: 1, name: 'Tủ lạnh'},
+        {id: 3, categoryId: 3, name: 'Ghế sofa'},
+        {id: 4, categoryId: 1, name: 'Máy giặt'},
+        {id: 5, categoryId: 2, name: 'Chén bát'},
+        {id: 6, categoryId: 2, name: 'Nồi cơm điện'},
+        {id: 7, categoryId: 3, name: 'Cửa kính'},	
+        {id: 8, categoryId: 1, name: 'Điều hoà'},
+        {id: 9, categoryId: 3, name: 'Bàn tròn'},
+        {id: 10, categoryId: 2, name: 'Lò vi sóng'},
+    ]
+    function filterProductsByCategoryId(products, categoryId) {
+        var filterProduct = products.filter(function (value,index){
+            return value.categoryId === categoryId
+        });
+        return filterProduct
+    }
+    console.log("Bài tập 16e" + "\n");
+    console.log(filterProductsByCategoryId(listProducts,3))
+    console.log("-------------------------------------");
+      
+
+        
+    
+
+      
+    
+    
+    
+            
+
+      
+
