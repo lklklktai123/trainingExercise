@@ -363,6 +363,132 @@ var namesOnly = ([
     console.log("Bài tập 16e" + "\n");
     console.log(filterProductsByCategoryId(listProducts,3))
     console.log("-------------------------------------");
+    //bt17
+    console.log("Bài tập 17a" + "\n");
+    var voters = [
+      {name:'Bob' , age: 30, voted: true},
+      {name:'Jake' , age: 32, voted: true},
+      {name:'Kate' , age: 25, voted: false},
+      {name:'Sam' , age: 20, voted: false},
+      {name:'Phil' , age: 21, voted: true},
+      {name:'Ed' , age:55, voted:true},
+      {name:'Tami' , age: 54, voted:true},
+      {name: 'Mary', age: 31, voted: false},
+      {name: 'Becky', age: 43, voted: false},
+      {name: 'Joey', age: 41, voted: true},
+      {name: 'Jeff', age: 30, voted: true},
+      {name: 'Zack', age: 19, voted: false}
+    ];
+    function totalVotes(arr) {
+      var total = voters.reduce(function(total,curentValue){
+        return total += curentValue.voted
+      },0)
+      return total
+    }
+    console.log(totalVotes(voters));
+    console.log("-------------------------------------");
+     function countOccurrences(arr){
+      return arr.reduce((total,curr) => {
+        if (total[curr]) {
+          total[curr] += 1
+        } else {
+          total[curr] = 1
+        }
+        return total
+    },{});
+    }
+    console.log("Bài tập 17b" + "\n");
+    console.log(countOccurrences(["a","b","c","a","a","b"]));
+    console.log("-------------------------------------");
+    // bt 18
+    function sortNumbers(arr) {
+      return arr.sort();
+    }
+    console.log("Bài tập 18a" + "\n");
+    console.log(sortNumbers([5, 1, 3, 2])); // [1, 2, 3, 5]
+    console.log("-------------------------------------");
+    function lengthSort(arr) {
+      return arr.sort(function(a,b){
+          return a.length - b.length
+      });
+    }
+    console.log("Bài tập 18b" + "\n");
+    console.log(lengthSort(["aaaa","bbb"]));
+    console.log("-------------------------------------");
+    function alphabetical(arr) {
+      return arr.sort(function(a,b){
+        return a > b
+      })
+    }
+    console.log("Bài tập 18c" + "\n");
+    console.log(alphabetical(["n","b","c","d","e","f","a"]));
+    console.log("-------------------------------------");
+    var arrBt18 = [
+      {
+        name: "Quiet Samurai",
+        age: 22
+      },
+      {
+        name: "Arrogant Ambassador",
+        age: 100
+      },
+      {
+        name: "Misunderstood Observer",
+        age: 2
+      },
+      {
+        name: "Unlucky Swami",
+        age: 77
+      }
+    ]
+    function byAge(arr){
+      return arr.sort(function(a,b){
+        return a.age - b.age
+      })
+    }
+    console.log("Bài tập 18c" + "\n");
+    console.log(byAge(arrBt18))
+    console.log("-------------------------------------");
+    var students = [
+      { name: 'A', score: 100 },
+      { name: 'B', score: 10 },
+      { name: 'C', score: 101 },
+      { name: 'D', score: 50 },
+      { name: 'E', score: 75 }
+    ];
+    function getTopStudents(students) {
+      return students.sort(function(a,b){
+        return b.score - a.score
+      }).slice(0,3);
+    }
+    console.log(getTopStudents(students))
+    console.log("-------------------------------------");
+    const number = [1,2,3,4,5,6,8,8]
+    console.log(number.indexOf(8,-1))
+
+    //bt19
+    function removeDuplicate(arr) {
+      var newArr = [];
+      newArr = arr.filter(function(item, pos) {
+        return arr.indexOf(item) == pos;
+      })
+      return newArr
+    }
+    console.log(removeDuplicate([1, 1, 2, 3, 3])) // [1, 2, 3]
+    function average(arr) {
+      var average = 0
+      for (const iterator of arr) {
+        average += iterator 
+      }
+      return Math.round(average / arr.length)
+    }
+    console.log(average([8, 8 , 6.75]))
+    
+            
+    
+    
+
+        
       
 
         

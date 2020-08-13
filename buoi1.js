@@ -43,3 +43,9 @@ console.log(bt11);
 //number.splice(1,1);
 // them pt o giua 
 //Number.splice(1,0,"bla bla");
+// reduce
+const number = [1,2,3,4,5,6,7,8]
+const total = number.reduce(function(total,curentValue){
+console.log(total,curentValue);
+return total + curentValue;
+},0)
